@@ -1,0 +1,12 @@
+.strong {
+    font-weight: bold;
+}
+.hidden {
+    display: none;
+}
+.bottomline {
+    bottom: 0;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+}
