@@ -9,7 +9,9 @@
   "author": "xxtg666",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^22.1.0",
+    "electron": "^22.1.0"
+  },
+  "dependencies": {
     "minecraft-launcher-core": "^3.16.18"
   }
 }
