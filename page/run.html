@@ -1,20 +1,27 @@
 <div class="container">
   <br>
-  <div class="card">
-    <div class="card-header">用户名（暂时只支持离线启动）</div>
-    <div class="card-body">
-      <input type="text" class="form-control" id="input-username">
-    </div>
-  </div>
-  <br>
-  <div class="card">
-    <div class="card-header">minecraft 版本</div>
+  <div class="card" id="run-setting">
     <div class="card-body">
       <div class="input-group">
+        <span class="input-group-text">用户名</span>
+        <input type="text" class="form-control" id="input-username">
+        <!--<button type="button" class="btn btn-primary" id="button-microsoftauth">微软登录</button>-->
+      </div>
+      <br>
+      <div class="input-group">
+        <span class="input-group-text">版本</span>
         <select class="form-select" id="select-minecraftversion">
           <option>请先去 设置 页面修改 .minecraft 文件夹路径</option>
         </select>
-        <button type="button" class="btn btn-primary" id="button-versionsetting">版本设置</button>
+        <!--<button type="button" class="btn btn-primary" id="button-versionsetting">设置</button>-->
+      </div>
+      <br>
+      <div class="input-group">
+        <span class="input-group-text">版本隔离</span>
+        <select class="form-select" id="select-versiong">
+          <option>开</option>
+          <option>关</option>
+        </select>
       </div>
     </div>
   </div>
@@ -22,9 +29,8 @@
   <div class="card">
     <div class="card-header">游戏日志</div>
     <div class="card-body">
-      <span id="p-log">
-        请先启动游戏
-      </span>
+      <!--<textarea id="p-log" class="form-control" type="text" aria-label="readonly" readonly>请先启动游戏</textarea>-->
+      <span id="p-log">请先启动游戏</span>
     </div>
   </div>
 </div><br><br><br>

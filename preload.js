@@ -17,13 +17,13 @@ contextBridge.exposeInMainWorld('electronAPI', {
 
 ipcRenderer.on('config', (_event,config) => {
     replaceValue("input-username",config["username"])
-    // replaceValue("select-minecraftversion",config["minecraftversion"])
     replaceValue("input-dotminecraftpath",config["dotminecraftpath"])
     replaceValue("input-skinpath",config["skinpath"])
     replaceValue("input-java",config["java"])
     replaceValue("input-ram",config["ram"])
     replaceValue("input-gamearg",config["gamearg"])
     replaceValue("input-javaarg",config["javaarg"])
+    document.getElementById("select-minecraftversion").selectedIndex=config["versiong"]
 })
 
 ipcRenderer.on('alert', (_event,str) => {
@@ -59,6 +59,8 @@ ipcRenderer.on("gameclose",(_event,num) => {
     buttonrun.className="btn btn-primary bottomline"
     buttonrun.innerHTML="启动游戏"
     if(num != 0){buttonrun.innerHTML="游戏异常退出 Code"+num+" | 启动游戏"}
+    document.getElementById("run-setting").className = "card"
+    document.getElementById("setting-runsetting").className= "card"
 })
 
 ipcRenderer.on("initpage",(_event,pages) => {
@@ -73,4 +75,8 @@ ipcRenderer.on("initpage",(_event,pages) => {
     script2.setAttribute('type','text/javascript');
     script2.setAttribute('src',"./js/edit_func.js");
     document.body.appendChild(script2)
+    let script3 = document.createElement('script');
+    script3.setAttribute('type','text/javascript');
+    script3.setAttribute('src',"./js/effect_func.js");
+    document.body.appendChild(script3)
 })

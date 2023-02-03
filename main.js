@@ -83,7 +83,8 @@ function getconfig(){
             "java":"",
             "ram":"4",
             "gamearg":"",
-            "javaarg":""
+            "javaarg":"",
+            "versiong":0
         }
         return data
     }
@@ -114,7 +115,15 @@ function launchgame(cfg,win){
             },
             javaPath: cfg["java"]+"javaw",
             customLaunchArgs:cfg["gamearg"],
-            customArgs: cfg["javaarg"]
+            customArgs: cfg["javaarg"],
+            overrides: {}
+        }
+        if(cfg["versiong"] == 0)
+        {
+            opts["overrides"]={
+                gameDirectory:cfg["dotminecraftpath"]+"/versions/"+folders[cfg["minecraftversion"]],
+                directory:cfg["dotminecraftpath"]+"/versions/"+folders[cfg["minecraftversion"]],
+            }
         }
         launcher.launch(opts);
         launcher.on('debug', (e) => win.webContents.send("gamelog",e));

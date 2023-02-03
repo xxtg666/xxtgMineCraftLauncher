@@ -7,6 +7,8 @@ let input_java = document.getElementById("input-java")
 let input_ram = document.getElementById("input-ram")
 let input_gamearg = document.getElementById("input-gamearg")
 let input_javaarg = document.getElementById("input-javaarg")
+let select_versiong = document.getElementById("select-versiong")
+let select_night = document.getElementById("select-night")
 function save_config()
 {
     let config = {
@@ -17,10 +19,14 @@ function save_config()
         "java":input_java.value,
         "ram":input_ram.value,
         "gamearg":input_gamearg.value,
-        "javaarg":input_javaarg.value
+        "javaarg":input_javaarg.value,
+        "versiong":select_versiong.selectedIndex,
     }
     window.electronAPI.saveconfig(config)
     window.electronAPI.loaddotminecraft()
+}
+function refresh_night(){
+    night_version(select_night.selectedIndex)
 }
 input_username.addEventListener('change',save_config)
 select_minecraftversion.addEventListener('change',save_config)
@@ -30,3 +36,5 @@ input_java.addEventListener('change',save_config)
 input_ram.addEventListener('change',save_config)
 input_gamearg.addEventListener('change',save_config)
 input_javaarg.addEventListener('change',save_config)
+select_versiong.addEventListener('change',save_config)
+select_night.addEventListener('change',refresh_night)

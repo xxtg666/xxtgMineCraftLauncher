@@ -1,6 +1,6 @@
 <br>
 <div class="card"><div class="card-body">在你修改文本框内容时，设置会自动保存</div></div><br>
-<div class="card">
+<div class="card" id="setting-runsetting">
     <div class="card-header">启动选项</div>
     <div class="card-body">
         <div class="input-group">
@@ -9,24 +9,24 @@
             <!--<input type="file" id="input-dotminecraftpath" class="form-control">-->
             <span class="input-group-text">/</span>
         </div>
-        <div class="input-group">
-            <span class="input-group-text">皮肤文件路径（暂未实现）</span>
-            <input type="text" class="form-control" id="input-skinpath">
-        </div>
+        <br>
         <div class="input-group">
             <span class="input-group-text">Java 路径</span>
             <input type="text" class="form-control" id="input-java">
             <span class="input-group-text">javaw</span>
         </div>
+        <br>
         <div class="input-group">
             <span class="input-group-text">内存分配</span>
             <input type="number" class="form-control" id="input-ram">
             <span class="input-group-text">GB</span>
         </div>
+        <br>
         <div class="input-group">
             <span class="input-group-text">自定义游戏参数</span>
             <input type="text" class="form-control" id="input-gamearg">
         </div>
+        <br>
         <div class="input-group">
             <span class="input-group-text">自定义 Java 参数</span>
             <input type="text" class="form-control" id="input-javaarg">
@@ -35,9 +35,37 @@
 </div>
 <br>
 <div class="card">
-    <div class="card-header">下载选项</div>
+    <div class="card-header">实验性功能 / 制作中 （不保证完全可用）</div>
     <div class="card-body">
-        暂未完成
+        <div class="card">
+            <div class="card-header">外观选项</div>
+            <div class="card-body">
+                <div class="input-group">
+                <span class="input-group-text">夜间模式</span>
+                <select class="form-select" id="select-night">
+                  <option>关</option>
+                  <option>开</option>
+                </select>
+              </div>
+            </div>
+        </div>
+        <br>
+        <div class="input-group disabledDiv">
+            <span class="input-group-text">皮肤文件路径</span>
+            <input type="text" class="form-control" id="input-skinpath">
+        </div>
+        <br>
+        <div class="card disabledDiv">
+            <div class="card-header">下载选项</div>
+            <div class="card-body">
+                暂未完成
+            </div>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary" id="button-microsoftauth">微软登录</button>
+        <button type="button" class="btn btn-primary" id="button-versionsetting">版本设置</button>
     </div>
 </div>
+<br>
+
 <br>

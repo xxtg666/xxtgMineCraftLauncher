@@ -39,6 +39,7 @@ nav_setting.addEventListener('click',on_nav_setting)
 // page-run
 let button_versionsetting = document.getElementById("button-versionsetting")
 let button_run = document.getElementById("button-run")
+let button_microsoftauth = document.getElementById("button-microsoftauth")
 function on_button_versionsetting()
 {
     alert("暂未完成")
@@ -50,7 +51,14 @@ function on_button_run()
     let buttonrun = document.getElementById("button-run")
     buttonrun.className="btn btn-primary bottomline disabled"
     buttonrun.innerHTML="游戏运行中……"
+    document.getElementById("run-setting").className= "card disabledDiv"
+    document.getElementById("setting-runsetting").className= "card disabledDiv"
     // alert("游戏已启动")
+}
+function on_button_microsoftauth()
+{
+    alert("暂未完成")
 }
 button_versionsetting.addEventListener('click',on_button_versionsetting)
 button_run.addEventListener('click',on_button_run)
+button_microsoftauth.addEventListener('click',on_button_microsoftauth)

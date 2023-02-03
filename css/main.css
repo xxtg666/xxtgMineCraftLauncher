@@ -10,3 +10,14 @@
     height: 50px;
     width: 100%;
 }
+.disabledDiv {
+    pointer-events: none;
+    opacity: 0.4;
+    background-color:lightgray;
+}
+.night {
+    filter: invert(100%);
+}
+.blackbg {
+    background-color:black;
+}
