@@ -16,90 +16,9 @@
         <li class="nav-item"><a class="nav-link" href="#" id="nav-setting">设置</a></li>
       </ul>
     </nav>
-    <div id="page-run">
-    <div class="container">
-        <br>
-        <div class="card">
-          <div class="card-header">用户名（暂时只支持离线启动）</div>
-          <div class="card-body">
-              <input type="text" class="form-control" id="input-username">
-          </div>
-        </div>
-        <br>
-        <div class="card">
-          <div class="card-header">minecraft 版本</div>
-          <div class="card-body">
-              <div class="input-group">
-                  <select class="form-select" id="select-minecraftversion">
-                      <option>请先去 设置 页面修改 .minecraft 文件夹路径</option>
-                  </select>
-                  <button type="button" class="btn btn-primary" id="button-versionsetting">版本设置</button>
-              </div>
-          </div>
-        </div>
-        <br>
-        <div class="card">
-          <div class="card-header">游戏日志</div>
-          <div class="card-body">
-              <span id="p-log">
-                  请先启动游戏
-              </span>
-          </div>
-        </div>
-        </div><br><br><br>
-        <button type="button" class="btn btn-primary bottomline" id="button-run">启动游戏</button>
-    </div>
-    <div id="page-download" class="hidden">
-        <br>
-        暂未完成
-    </div>
-    <div id="page-setting" class="hidden">
-        <br>
-        <div class="card"><div class="card-body">在你修改文本框内容时，设置会自动保存</div></div><br>
-        <div class="card">
-          <div class="card-header">启动选项</div>
-          <div class="card-body">
-              <div class="input-group">
-                  <span class="input-group-text">.minecraft 文件夹路径</span>
-                  <input type="text" class="form-control" id="input-dotminecraftpath">
-                  <!--<input type="file" id="input-dotminecraftpath" class="form-control">-->
-                  <span class="input-group-text">/</span>
-              </div>
-              <div class="input-group">
-                  <span class="input-group-text">皮肤文件路径（暂未实现）</span>
-                  <input type="text" class="form-control" id="input-skinpath">
-              </div>
-              <div class="input-group">
-                  <span class="input-group-text">Java 路径</span>
-                  <input type="text" class="form-control" id="input-java">
-                  <span class="input-group-text">javaw</span>
-              </div>
-              <div class="input-group">
-                  <span class="input-group-text">内存分配</span>
-                  <input type="number" class="form-control" id="input-ram">
-                  <span class="input-group-text">GB</span>
-              </div>
-              <div class="input-group">
-                  <span class="input-group-text">自定义游戏参数</span>
-                  <input type="text" class="form-control" id="input-gamearg">
-              </div>
-              <div class="input-group">
-                  <span class="input-group-text">自定义 Java 参数</span>
-                  <input type="text" class="form-control" id="input-javaarg">
-              </div>
-          </div>
-        </div>
-        <br>
-        <div class="card">
-          <div class="card-header">下载选项</div>
-          <div class="card-body">
-              暂未完成
-          </div>
-        </div>
-        <br>
-    </div>
-<script src="./js/click_func.js"></script>
-<script src="./js/edit_func.js"></script>
-<script src="./renderer.js"></script>
+    <div id="page-run"></div>
+    <div id="page-download" class="hidden"></div>
+    <div id="page-setting" class="hidden"></div>
+    <script src="./renderer.js"></script>
 </body>
 </html>

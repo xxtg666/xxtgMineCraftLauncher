@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 contextBridge.exposeInMainWorld('electronAPI', {
+    _init: () => ipcRenderer.send('init'),
     loadconfig: () => ipcRenderer.send('loadconfig'),
     saveconfig: (config) => ipcRenderer.send('saveconfig',config),
     loaddotminecraft: () => ipcRenderer.send('loaddotminecraft'),
@@ -58,4 +59,18 @@ ipcRenderer.on("gameclose",(_event,num) => {
     buttonrun.className="btn btn-primary bottomline"
     buttonrun.innerHTML="启动游戏"
     if(num != 0){buttonrun.innerHTML="游戏异常退出 Code"+num+" | 启动游戏"}
+})
+
+ipcRenderer.on("initpage",(_event,pages) => {
+    document.getElementById("page-run").innerHTML = pages["run"]
+    document.getElementById("page-download").innerHTML = pages["download"]
+    document.getElementById("page-setting").innerHTML = pages["setting"]
+    let script = document.createElement('script');
+    script.setAttribute('type','text/javascript');
+    script.setAttribute('src',"./js/click_func.js");
+    document.body.appendChild(script)
+    let script2 = document.createElement('script');
+    script2.setAttribute('type','text/javascript');
+    script2.setAttribute('src',"./js/edit_func.js");
+    document.body.appendChild(script2)
 })

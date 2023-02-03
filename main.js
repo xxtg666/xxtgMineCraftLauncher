@@ -14,6 +14,14 @@ const createWindow = () => {
   })
 
     win.loadFile('index.html')
+    ipcMain.on('init', (_event) => {
+        console.log("init")
+        let page={"run":"","download":"","setting":""}
+        page["run"]=fs.readFileSync("./page/run.html").toString()
+        page["download"]=fs.readFileSync("./page/download.html").toString()
+        page["setting"]=fs.readFileSync("./page/setting.html").toString()
+        win.webContents.send('initpage',page)
+    })
     ipcMain.on('loadconfig', () => {
         console.log("loadconfig")
         win.webContents.send('config',getconfig())
