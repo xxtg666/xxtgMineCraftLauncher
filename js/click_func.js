@@ -47,6 +47,9 @@ function on_button_run()
 {
     document.getElementById("p-log").innerHTML=""
     window.electronAPI.rungame()
+    let buttonrun = document.getElementById("button-run")
+    buttonrun.className="btn btn-primary bottomline disabled"
+    buttonrun.innerHTML="游戏运行中……"
     // alert("游戏已启动")
 }
 button_versionsetting.addEventListener('click',on_button_versionsetting)

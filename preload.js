@@ -21,6 +21,8 @@ ipcRenderer.on('config', (_event,config) => {
     replaceValue("input-skinpath",config["skinpath"])
     replaceValue("input-java",config["java"])
     replaceValue("input-ram",config["ram"])
+    replaceValue("input-gamearg",config["gamearg"])
+    replaceValue("input-javaarg",config["javaarg"])
 })
 
 ipcRenderer.on('alert', (_event,str) => {
@@ -49,4 +51,11 @@ ipcRenderer.on("dotminecraftfailed",(_event) => {
 ipcRenderer.on("gamelog",(_event,log) => {
     let plog = document.getElementById("p-log")
     plog.innerHTML = plog.innerHTML + log + "<br>"
+})
+
+ipcRenderer.on("gameclose",(_event,num) => {
+    let buttonrun = document.getElementById("button-run")
+    buttonrun.className="btn btn-primary bottomline"
+    buttonrun.innerHTML="启动游戏"
+    if(num != 0){buttonrun.innerHTML="游戏异常退出 Code"+num+" | 启动游戏"}
 })

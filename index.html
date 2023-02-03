@@ -5,6 +5,7 @@
     <title>xxtg Minecraft Launcher</title>
     <link href="./css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="icon" href="./img/icon.ico" type ="image/x-icon">
 </head>
 <body>
     <script src="./js/bootstrap.bundle.min.js" integrity="sha384-/mhDoLbDldZc3qpsJHpLogda//BVZbgYuw6kof4u2FrCedxOtgRZDTHgHUhOCVim" crossorigin="anonymous"></script>
@@ -40,9 +41,9 @@
         <div class="card">
           <div class="card-header">游戏日志</div>
           <div class="card-body">
-              <p id="p-log">
+              <span id="p-log">
                   请先启动游戏
-              </p>
+              </span>
           </div>
         </div>
         </div><br><br><br>
@@ -61,14 +62,15 @@
               <div class="input-group">
                   <span class="input-group-text">.minecraft 文件夹路径</span>
                   <input type="text" class="form-control" id="input-dotminecraftpath">
+                  <!--<input type="file" id="input-dotminecraftpath" class="form-control">-->
                   <span class="input-group-text">/</span>
               </div>
               <div class="input-group">
-                  <span class="input-group-text">皮肤文件路径（留空则为默认）</span>
+                  <span class="input-group-text">皮肤文件路径（暂未实现）</span>
                   <input type="text" class="form-control" id="input-skinpath">
               </div>
               <div class="input-group">
-                  <span class="input-group-text">Java 路径（留空则为默认）</span>
+                  <span class="input-group-text">Java 路径</span>
                   <input type="text" class="form-control" id="input-java">
                   <span class="input-group-text">javaw</span>
               </div>
@@ -76,6 +78,14 @@
                   <span class="input-group-text">内存分配</span>
                   <input type="number" class="form-control" id="input-ram">
                   <span class="input-group-text">GB</span>
+              </div>
+              <div class="input-group">
+                  <span class="input-group-text">自定义游戏参数</span>
+                  <input type="text" class="form-control" id="input-gamearg">
+              </div>
+              <div class="input-group">
+                  <span class="input-group-text">自定义 Java 参数</span>
+                  <input type="text" class="form-control" id="input-javaarg">
               </div>
           </div>
         </div>
@@ -86,6 +96,7 @@
               暂未完成
           </div>
         </div>
+        <br>
     </div>
 <script src="./js/click_func.js"></script>
 <script src="./js/edit_func.js"></script>

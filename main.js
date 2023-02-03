@@ -1,6 +1,6 @@
 const { app, BrowserWindow , ipcMain} = require('electron')
 const path = require('path')
-const { Client, Authenticator } = require('minecraft-launcher-core');
+const { Client, Authenticator } = require('minecraft-launcher-core')
 const fs = require('fs')
 const config_path = './xmcl_config.json'
 const createWindow = () => {
@@ -8,8 +8,9 @@ const createWindow = () => {
     width: 800,
     height: 600,
       webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
+      preload: path.join(__dirname, 'preload.js'),
+    },
+    icon: path.join(__dirname, 'img/icon.ico')
   })
 
     win.loadFile('index.html')
@@ -67,13 +68,15 @@ function getconfig(){
     } catch (error) {
         console.log(error)
         let data = {
-                "username":"",
-                "minecraftversion":0,
-                "dotminecraftpath":".minecraft",
-                "skinpath":"",
-                "java":"",
-                "ram":"4"
-                }
+            "username":"",
+            "minecraftversion":0,
+            "dotminecraftpath":".minecraft",
+            "skinpath":"",
+            "java":"",
+            "ram":"4",
+            "gamearg":"",
+            "javaarg":""
+        }
         return data
     }
 }
@@ -101,10 +104,13 @@ function launchgame(cfg,win){
                 max: cfg["ram"] + "G",
                 min: "128M"
             },
-            javaPath: cfg["java"]+"javaw"
+            javaPath: cfg["java"]+"javaw",
+            customLaunchArgs:cfg["gamearg"],
+            customArgs: cfg["javaarg"]
         }
         launcher.launch(opts);
         launcher.on('debug', (e) => win.webContents.send("gamelog",e));
         launcher.on('data', (e) => win.webContents.send("gamelog",e));
+        launcher.on('close', (e) => win.webContents.send("gameclose",e));
         })
 }
