@@ -2,12 +2,12 @@ function night_version(enable)
 {
     if( enable == 1 )
     {
-        document.body.className="night blackbg"
+        document.documentElement.className="night blackbg"
         // document.getElementById("page-setting").classList.add("blackbg")
     }
     else
     {
-        document.body.className=""
+        document.documentElement.className=""
         // document.getElementById("page-setting").classList.remove("blackbg")
     }
 }

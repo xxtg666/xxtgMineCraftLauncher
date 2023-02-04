@@ -21,3 +21,11 @@
 .blackbg {
     background-color:black;
 }
+
+@font-face {
+    font-family: 'PCL-English';
+    src: url('font/Font.ttf');
+}
+html {
+    font-family:"PCL-English"
+}
